@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "filmes",
+  "info": {
+    "singularName": "filme",
+    "pluralName": "filmes",
+    "displayName": "filme"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::author.author"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    },
+    "imagem": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "lancamento": {
+      "type": "date"
+    }
+  }
+}
